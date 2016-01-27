@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-01-08 15:44+0100\n"
+"PO-Revision-Date: 2016-01-08 15:48+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 1.8.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+
+#: bakertool.py:18
+msgid "Are you ready to make bread? :-)"
+msgstr "¿Estás listo para hacer pan? :-)"
+
+#: bakertool.py:56
+msgid "executed cleanup"
+msgstr "Limpiar datos"
+
+#: bakertool.py:90
+msgid "activated selection: sourdought only"
+msgstr "selección activada: solo masa madre"
+
+#: bakertool.py:98
+msgid "activated selection: dry yeast only"
+msgstr "selección activada: solo levadura seca"
+
+#: bakertool.py:106
+msgid "activated selection: fresh yeast only"
+msgstr "selección activada: solo levadura fresca"
+
+#: bakertool.py:113
+msgid "activated selection: sourdought and dry yeast combined"
+msgstr "selección activada: masa madre y levadura seca"
+
+#: bakertool.py:120
+msgid "activated selection: sourdought and fresh yeast combined"
+msgstr "selección activada: masa madre y levadura fresca"
+
+#: bakertool.py:133
+msgid "activated selection: "
+msgstr "selección activa:"
+
+#: bakertool.py:141
+msgid "Bread maker percentage selection"
+msgstr "Porcentage seleccionado del panadero"
+
+#: bakertool.py:145
+msgid "Percentage build based in chosen values"
+msgstr "Porcentaje construido con los valores seleccionados"
+
+#: bakertool.py:264
+msgid "executed formula using flour, water and totalweight"
+msgstr "ejecutada la fórmula usando harina, agua y el peso total"
+
+#: bakertool.py:275
+msgid "executed formula using flour, water and sourdought"
+msgstr "ejecutada la fórmula usando harina, agua y masa madre"
+
+#: bakertool.py:280
+msgid "executed formula using flour and water"
+msgstr ""
+
+#: bakertool.py:291
+msgid "executed formula using flour, totalweight and sourdought"
+msgstr ""
+
+#: bakertool.py:297
+msgid "executed formula using flour and totalweight"
+msgstr ""
+
+#: bakertool.py:308
+msgid "executed formula using water, totalweight and sourdought"
+msgstr ""
+
+#: bakertool.py:315
+msgid "executed formula using water and totalweight"
+msgstr ""
+
+#: bakertool.py:320
+msgid "executed formula using totalweight and percentage"
+msgstr ""
+
+#: bakertool.py:322
+msgid "no enough ingredients to make a selection!"
+msgstr "no hay suficientes ingredientes para reallizar una selección!"
+
+#: bakertool.py:341 gui.py:23
+msgid "Bread maker"
+msgstr "Máquina panificadora"
+
+#: gui.py:31
+msgid "All details"
+msgstr "Todos los detalles"
+
+#: gui.py:33
+msgid "My ingredients"
+msgstr "Mis ingredientes"
+
+#: gui.py:37 gui.py:90
+msgid "Flour"
+msgstr "Harina"
+
+#: gui.py:44 gui.py:97
+msgid "Water"
+msgstr "Agua"
+
+#: gui.py:51 gui.py:104
+msgid "Total Weight"
+msgstr "Peso total"
+
+#: gui.py:58 gui.py:132
+msgid "Sourdought"
+msgstr "Masa madre"
+
+#: gui.py:69 gui.py:125
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#: gui.py:86
+msgid "My final recipe"
+msgstr "Mi receta final"
+
+#: gui.py:111
+msgid "Yeast"
+msgstr "Levadura"
+
+#: gui.py:118
+msgid "Salt"
+msgstr "Sal"
+
+#: gui.py:155
+msgid "Messages"
+msgstr "Mensajes"
+
+#: gui.py:163
+msgid "Actions"
+msgstr "Acciones"
+
+#: gui.py:168
+msgid "Execute"
+msgstr "Ejecutar"
+
+#: gui.py:171
+msgid "Cleanup"
+msgstr "Limpiar datos"
+
+#: gui.py:174
+msgid "Combined sourdought with dry yeast"
+msgstr "Combinado masa madre con levadura seca"
+
+#: gui.py:174
+msgid "Combined sourdought with fresh yeast"
+msgstr "Combinado masa madre con levadura fresca"
+
+#: gui.py:174
+msgid "Dry yeast only"
+msgstr "Solo levadura seca"
+
+#: gui.py:174
+msgid "Fresh yeast only"
+msgstr "Solo levadura fresca"
+
+#: gui.py:174
+msgid "Sourdought only"
+msgstr "Solo masa madre"
+
+#: gui.py:175
+msgid "Yeast selection"
+msgstr "Selección de levaduras"
+
+#: gui.py:179
+msgid "By percentage"
+msgstr "Por porcentaje"
+
+#: gui.py:179
+msgid "By weight"
+msgstr "Por peso"
+
+#: gui.py:180
+msgid "Volumes"
+msgstr "Volúmenes"
+
+#: gui.py:231
+msgid "Select Percentages"
+msgstr "Selecciona porcentajes"
+
+#: gui.py:239
+msgid "Selected final weight"
+msgstr "Seleccionado peso final"
+
+#: gui.py:249
+msgid "Bread percentage formula"
+msgstr "Fórmula del panadero"
+
+#: gui.py:257
+msgid "Ok"
+msgstr "Ok"
