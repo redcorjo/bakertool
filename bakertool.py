@@ -257,7 +257,7 @@ Bread Maker tool may come with bugs. This is the fun of freeware :-).
         info = wx.AboutDialogInfo()
         info.SetIcon(wx.Icon('./icons/bread128.png', wx.BITMAP_TYPE_ANY))
         info.SetName('Bread Maker tool')
-        info.SetVersion('0.71')
+        info.SetVersion('0.72')
         info.SetDescription(description)
         info.SetCopyright('(C) 2015 - 2016 Jordi Redondo')
         info.SetWebSite('https://github.com/redcorjo/bakertool.git')
