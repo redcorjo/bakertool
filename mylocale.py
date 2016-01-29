@@ -19,7 +19,7 @@ def mylocale():
     import gettext
 
     mylanguage = "%s" % locale.getdefaultlocale()[0][0:2]
-    mylanguage = "en"
+    #mylanguage = "en"
 
     try:
         mylocale = gettext.translation('bakertool', localedir='locale', languages=[mylanguage])
