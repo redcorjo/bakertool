@@ -10,9 +10,6 @@
 import wx
 import wx.xrc
 
-import gettext
-_ = gettext.gettext
-
 ###########################################################################
 ## Class MyFrame1
 ###########################################################################
@@ -20,7 +17,7 @@ _ = gettext.gettext
 class MyFrame1 ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Bread Maker"), pos = wx.DefaultPosition, size = wx.Size( 666,700 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Bread Maker"), pos = wx.DefaultPosition, size = wx.Size( 666,768 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -180,6 +177,28 @@ class MyFrame1 ( wx.Frame ):
 		
 		bSizer1.Add( sbSizer_messages, 1, wx.EXPAND, 5 )
 		
+		sbSizer_profiles = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, _(u"Profiles") ), wx.VERTICAL )
+		
+		bSizer91 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText16 = wx.StaticText( sbSizer_profiles.GetStaticBox(), wx.ID_ANY, _(u"My recipe name: "), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText16.Wrap( -1 )
+		bSizer91.Add( self.m_staticText16, 0, wx.ALL, 5 )
+		
+		self.m_textCtrl_profile = wx.TextCtrl( sbSizer_profiles.GetStaticBox(), wx.ID_ANY, _(u"default"), wx.DefaultPosition, wx.Size( 200,-1 ), wx.TE_PROCESS_ENTER )
+		bSizer91.Add( self.m_textCtrl_profile, 0, wx.ALL, 5 )
+		
+		m_choice_profileChoices = [ _(u"default") ]
+		self.m_choice_profile = wx.Choice( sbSizer_profiles.GetStaticBox(), wx.ID_ANY, wx.DefaultPosition, wx.Size( 200,-1 ), m_choice_profileChoices, 0 )
+		self.m_choice_profile.SetSelection( 0 )
+		bSizer91.Add( self.m_choice_profile, 0, wx.ALL, 5 )
+		
+		
+		sbSizer_profiles.Add( bSizer91, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer1.Add( sbSizer_profiles, 1, wx.EXPAND, 5 )
+		
 		sbSizer_actions = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, _(u"Actions") ), wx.VERTICAL )
 		
 		bSizer4 = wx.BoxSizer( wx.HORIZONTAL )
@@ -214,7 +233,7 @@ class MyFrame1 ( wx.Frame ):
 		
 		self.SetSizer( bSizer1 )
 		self.Layout()
-		self.m_menubar2 = wx.MenuBar( 0 )
+		self.m_menubar = wx.MenuBar( 0 )
 		self.m_menu_file = wx.Menu()
 		self.m_menuItem_open = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Open"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_file.AppendItem( self.m_menuItem_open )
@@ -235,7 +254,7 @@ class MyFrame1 ( wx.Frame ):
 		self.m_menuItem_exit = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Exit"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_file.AppendItem( self.m_menuItem_exit )
 		
-		self.m_menubar2.Append( self.m_menu_file, _(u"File") ) 
+		self.m_menubar.Append( self.m_menu_file, _(u"File") ) 
 		
 		self.m_menu_help = wx.Menu()
 		self.m_menuItem_help = wx.MenuItem( self.m_menu_help, wx.ID_ANY, _(u"Help"), wx.EmptyString, wx.ITEM_NORMAL )
@@ -246,15 +265,17 @@ class MyFrame1 ( wx.Frame ):
 		self.m_menuItem_about = wx.MenuItem( self.m_menu_help, wx.ID_ANY, _(u"About"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_help.AppendItem( self.m_menuItem_about )
 		
-		self.m_menubar2.Append( self.m_menu_help, _(u"Help") ) 
+		self.m_menubar.Append( self.m_menu_help, _(u"Help") ) 
 		
-		self.SetMenuBar( self.m_menubar2 )
+		self.SetMenuBar( self.m_menubar )
 		
 		
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
 		self.Bind( wx.EVT_CLOSE, self.close_my_app )
+		self.m_textCtrl_profile.Bind( wx.EVT_TEXT_ENTER, self.execute_profilename )
+		self.m_choice_profile.Bind( wx.EVT_CHOICE, self.execute_onchoice_profile )
 		self.m_button1.Bind( wx.EVT_BUTTON, self.execute_breadformula )
 		self.wizard_selection.Bind( wx.EVT_BUTTON, self.execute_wizard )
 		self.cleanup_form.Bind( wx.EVT_BUTTON, self.execute_cleanup )
@@ -272,6 +293,12 @@ class MyFrame1 ( wx.Frame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def close_my_app( self, event ):
+		event.Skip()
+	
+	def execute_profilename( self, event ):
+		event.Skip()
+	
+	def execute_onchoice_profile( self, event ):
 		event.Skip()
 	
 	def execute_breadformula( self, event ):

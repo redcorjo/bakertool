@@ -21,6 +21,10 @@ class MyWindow(gui.MyFrame1):
         self.yeast_option="dryyeast"
         self.m_radioBox_yeast_selection.SetSelection(1)
         self.display_message(_(u"Are you ready to make bread? :-)"))
+        self.m_choice_profileChoices = [ _(u"default")]
+        self.m_choice_profile.Clear()
+        self.m_choice_profile.AppendItems(self.m_choice_profileChoices)
+        self.m_choice_profile.SetSelection(0)
 
     def execute_breadformula( self, event ):
         if event == "load_config":
@@ -33,26 +37,30 @@ class MyWindow(gui.MyFrame1):
             mybread.reset()
 
             if self.flour_entry.GetValue() != "":
-                mybread.flour=float(self.flour_entry.GetValue())
+                mybread.flour=round(float(self.flour_entry.GetValue()),2)
             else:
                 mybread.flour=0
             if self.water_entry.GetValue() != "":
-                mybread.water=float(self.water_entry.GetValue())
+                mybread.water=round(float(self.water_entry.GetValue()),2)
             else:
                 mybread.water=0
             if self.totalweight_entry.GetValue() != "":
-                mybread.totalweight=float(self.totalweight_entry.GetValue())
+                mybread.totalweight=round(float(self.totalweight_entry.GetValue()),2)
             else:
                 mybread.totalweight=0
             if self.percentage_entry.GetValue() != "":
-                mybread.percentage=float(self.percentage_entry.GetValue())
+                mybread.percentage=round(float(self.percentage_entry.GetValue()),2)
             else:
                 mybread.percentage=0
             if self.sourdought_entry.GetValue() != "":
-                mybread.sourdought=float(self.sourdought_entry.GetValue())
+                mybread.sourdought=round(float(self.sourdought_entry.GetValue()),2)
             else:
                 mybread.sourdought=0
-            self.obtain_yeast_option()
+            if self.m_textCtrl_profile.GetValue() != "":
+                mybread.profile=unicode(self.m_textCtrl_profile.GetValue())
+            else:
+                mybread.profile=_(u"default")
+        self.obtain_yeast_option()
         mybread.breadformula(self.yeast_option)
         self.flour_results.SetValue(str(int(mybread.flour)))
         self.water_results.SetValue(str(int(mybread.water)))
@@ -67,6 +75,7 @@ class MyWindow(gui.MyFrame1):
         self.salt_results_percentage.SetValue(str(float(mybread.saltpercentage))+"%")
         self.yeast_results_percentage.SetValue(str(float(mybread.yeastpercentage))+"%")
         self.sourdought_results_percentage.SetValue(str(int(mybread.sourdoughtpercentage))+"%")
+        self.execute_profilename(event)
 
     def execute_cleanup( self, event ):
         self.display_message(_(u"executed cleanup"))
@@ -128,6 +137,7 @@ class MyWindow(gui.MyFrame1):
             self.sourdought_results.Show()
             self.sourdought_results_percentage.Show()
             mybread.yeastpercentage=0
+            mybread.yeast=0
             self.display_message(_(u"activated selection: sourdought only"))
         elif self.yeast_option == "dryyeast":
             self.m_staticText_sourdought_input.Hide()
@@ -272,16 +282,23 @@ https://en.wikipedia.org/wiki/Baker_percentage
             return
         else:
             with open(openFileDialog.GetPath(),'rb') as mydescriptor:
-                mybread.mydictionary=pickle.load(mydescriptor)
-            debug_print(str(mybread.mydictionary))
+                mybread.myprofiledict=pickle.load(mydescriptor)
+            debug_print(str(mybread.myprofiledict))
             mybread.unpackage_from_dictionary()
+            self.m_choice_profileChoices=mybread.myprofiledict.keys()
+            self.m_choice_profileChoices.remove("default")
+            self.m_choice_profileChoices.insert(0,"default")
+            self.m_choice_profile.Clear()
+            self.m_choice_profile.AppendItems(self.m_choice_profileChoices)
+            self.m_choice_profile.SetSelection(0)
+
             self.execute_breadformula("load_config")
 
     def execute_save( self, event ):
         debug_print("execute_save")
         with open(self.myfilename,'wb') as mydescriptor:
-            pickle.dump(mybread.mydictionary,mydescriptor)
-        debug_print(str(mybread.mydictionary))
+            pickle.dump(mybread.myprofiledict,mydescriptor)
+        debug_print(str(mybread.myprofiledict))
 
     def execute_save_as( self, event ):
         debug_print("execute_save_as")
@@ -293,11 +310,42 @@ https://en.wikipedia.org/wiki/Baker_percentage
             return
         else:
             with open(saveFileDialog.GetPath(),'wb') as mydescriptor:
-                pickle.dump(mybread.mydictionary,mydescriptor)
-            debug_print(str(mybread.mydictionary))
+                pickle.dump(mybread.myprofiledict,mydescriptor)
+            debug_print(str(mybread.myprofiledict))
 
     def close_my_app(self, event):
         exit()
+
+    def execute_profilename( self, event ):
+        debug_print("execute_profilename")
+        if self.m_textCtrl_profile.GetValue() != "":
+            mybread.profile=unicode(self.m_textCtrl_profile.GetValue())
+        else:
+            mybread.profile=_(u"default")
+        if mybread.profile not in self.m_choice_profileChoices:
+            self.m_choice_profileChoices.append(mybread.profile)
+            self.m_choice_profile.Clear()
+            self.m_choice_profile.AppendItems(self.m_choice_profileChoices)
+            self.m_choice_profile.SetSelection(len(self.m_choice_profileChoices)-1)
+        mybread.package_to_dictionary()
+
+    def execute_onchoice_profile( self, event ):
+        choice=self.m_choice_profile.GetStringSelection()
+        self.m_textCtrl_profile.SetValue(choice)
+        mybread.unpackage_from_dictionary(choice)
+        self.yeast_option=mybread.yeast_option
+        if self.yeast_option == "sourdought":
+            self.m_radioBox_yeast_selection.SetSelection(0)
+        if self.yeast_option == "dryyeast":
+            self.m_radioBox_yeast_selection.SetSelection(1)
+        if self.yeast_option == "freshyeast":
+            self.m_radioBox_yeast_selection.SetSelection(2)
+        if self.yeast_option == "sourdought_and_dryyeast":
+            self.m_radioBox_yeast_selection.SetSelection(3)
+        if self.yeast_option == "sourdought_and_freshyeast":
+            self.m_radioBox_yeast_selection.SetSelection(4)
+        self.execute_yeast_selection(event)
+        self.execute_breadformula("load_config")
 
 class MyDialog_with_sourdought(gui.MyDialog_select_percentage_with_sourdought):
 
@@ -353,7 +401,6 @@ class MyDialog_without_sourdought(gui.MyDialog_select_percentage_without_sourdou
             debug_print ("other char " + str(keycode))
 
     def execute_percentage_formula( self, event ):
-        #print "execute percentage"
         mybread.sourdought=0
         if self.totalweight_entry.GetValue() != "":
             mybread.totalweight=int(self.totalweight_entry.GetValue())
@@ -390,6 +437,8 @@ class Breadmaker():
     yeast_option="dryyeast"
 
     def __init__(self):
+        self.myprofiledict={}
+        self.profile="default"
         self.flour=0
         self.water=0
         self.totalweight=0
@@ -431,12 +480,15 @@ class Breadmaker():
         self.mydictionary={}
         for myitem in myvariables:
             myvalue=getattr(self,myitem)
-            if isinstance(myvalue,int) or isinstance(myvalue,str) or isinstance(myvalue,float):
+            if isinstance(myvalue,int) or isinstance(myvalue,str) or isinstance(myvalue,float) \
+                    or isinstance(myvalue,unicode):
                 if not myitem.startswith("__"):
                     self.mydictionary[myitem]=myvalue
+        self.myprofiledict[self.profile]=self.mydictionary
 
-    def unpackage_from_dictionary(self):
-        for myvariable,myvalue in self.mydictionary.iteritems():
+
+    def unpackage_from_dictionary(self,myprofile=u"default"):
+        for myvariable,myvalue in self.myprofiledict[myprofile].iteritems():
             setattr(self,myvariable,myvalue)
 
 
@@ -478,6 +530,59 @@ class Breadmaker():
             self.sourdought_water=0
             self.sourdought_flour=0
             self.sourdought=0
+
+    def breadformula(self,yeast_option="none"):
+        debug_print ("yeast option : " + yeast_option)
+        if yeast_option == "dryyeast" or yeast_option == "freshyeast":
+            yeastoption="yeast"
+        elif yeast_option == "sourdought":
+            yeastoption="sourdought"
+        else:
+            yeastoption="sourdought_and_yeast"
+        if self.flour > 0 and self.water > 0 :
+            self.breadformula_flour_water(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.flour > 0 and self.percentage > 0 :
+            self.breadformula_flour_percentage(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.totalweight > 0 and self.percentage > 0 :
+            self.breadformula_totalweight_percentage(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.water > 0 and self.percentage > 0 :
+            self.breadformula_water_percentage(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.flour > 0 and self.water > 0 and self.totalweight > 0 :
+            self.breadformula_flour_water_totalweight(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.flour > 0 and self.water > 0 and self.sourdought > 0 :
+            self.breadformula_flour_water_sourdought(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.flour > 0 and self.totalweight > 0 and self.sourdought:
+            self.breadformula_flour_totalweight_sourdought(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.flour > 0 and self.totalweight > 0 :
+            self.breadformula_flour_totalweight(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.water > 0 and self.totalweight > 0 and self.sourdought > 0 :
+            self.breadformula_water_totalweight_sourdought(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.water > 0 and self.totalweight > 0 :
+            self.breadformula_water_totalweight(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        elif self.totalweight > 0 and self.percentage > 0 and self.sourdought > 0 :
+            self.breadformula_totalweight_percentage_sourdought(yeastoption)
+            self.total_formula_percentage(yeastoption)
+        else:
+            window.display_message (_(u"no enough ingredients to make a selection!"))
+            mybread.reset()
+            debug_print ("OTHER: water=%d flour=%d totalweight=%d percentage=%d%%" % (self.water,self.flour,
+                                                                               self.totalweight,self.percentage))
+        debug_print ("water=%d flour=%d totalweight=%d yeast=%d salt=%d percentage=%d%% yeastpercentage=%f%% " \
+              "saltpercentage=%d%% sourdought=%d sourdought_flour=%d sourdought_water=%d sourdought_percentage=%d%%" % \
+                  (self.water,self.flour,self.totalweight,self.yeast,self.salt,self.percentage,self.yeastpercentage,
+                   self.saltpercentage,self.sourdought,self.sourdought_flour,self.sourdought_water,self.sourdoughtpercentage))
+        self.package_to_dictionary()
+        debug_print ("#####################################################")
 
     def breadformula_flour_totalweight(self,yeastoption):
         debug_print ("breadformula_flour_totalweight")
@@ -645,7 +750,6 @@ class Breadmaker():
             window.display_message(_(u"no enough ingredients to make a selection with flour, totalweight and percentage!"))
             window.execute_cleanup_results()
 
-
     def breadformula_water_totalweight_percentage(self,yeastoption):
         debug_print("breadformula_water_totalweight_percentage")
         self.init_sourdought(yeastoption)
@@ -744,59 +848,6 @@ class Breadmaker():
             self.water=self.totalweight-self.flour-self.sourdought_flour-self.sourdought_water
             self.salt_and_yeast_calculation()
             window.display_message(_(u"executed formula using totalweight, percentage and sourdought"))
-
-    def breadformula(self,yeast_option="none"):
-        debug_print ("yeast option : " + yeast_option)
-        if yeast_option == "dryyeast" or yeast_option == "freshyeast":
-            yeastoption="yeast"
-        elif yeast_option == "sourdought":
-            yeastoption="sourdought"
-        else:
-            yeastoption="sourdought_and_yeast"
-        if self.flour > 0 and self.water > 0 :
-            self.breadformula_flour_water(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.flour > 0 and self.percentage > 0 :
-            self.breadformula_flour_percentage(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.totalweight > 0 and self.percentage > 0 :
-            self.breadformula_totalweight_percentage(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.water > 0 and self.percentage > 0 :
-            self.breadformula_water_percentage(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.flour > 0 and self.water > 0 and self.totalweight > 0 :
-            self.breadformula_flour_water_totalweight(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.flour > 0 and self.water > 0 and self.sourdought > 0 :
-            self.breadformula_flour_water_sourdought(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.flour > 0 and self.totalweight > 0 and self.sourdought:
-            self.breadformula_flour_totalweight_sourdought(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.flour > 0 and self.totalweight > 0 :
-            self.breadformula_flour_totalweight(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.water > 0 and self.totalweight > 0 and self.sourdought > 0 :
-            self.breadformula_water_totalweight_sourdought(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.water > 0 and self.totalweight > 0 :
-            self.breadformula_water_totalweight(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        elif self.totalweight > 0 and self.percentage > 0 and self.sourdought > 0 :
-            self.breadformula_totalweight_percentage_sourdought(yeastoption)
-            self.total_formula_percentage(yeastoption)
-        else:
-            window.display_message (_(u"no enough ingredients to make a selection!"))
-            mybread.reset()
-            debug_print ("OTHER: water=%d flour=%d totalweight=%d percentage=%d%%" % (self.water,self.flour,
-                                                                               self.totalweight,self.percentage))
-        debug_print ("water=%d flour=%d totalweight=%d yeast=%d salt=%d percentage=%d%% yeastpercentage=%f%% " \
-              "saltpercentage=%d%% sourdought=%d sourdought_flour=%d sourdought_water=%d sourdought_percentage=%d%%" % \
-                  (self.water,self.flour,self.totalweight,self.yeast,self.salt,self.percentage,self.yeastpercentage,
-                   self.saltpercentage,self.sourdought,self.sourdought_flour,self.sourdought_water,self.sourdoughtpercentage))
-        self.package_to_dictionary()
-        debug_print ("#####################################################")
 
 def debug_print(message):
     if DEBUG == "YES":
