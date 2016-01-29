@@ -252,6 +252,7 @@ published by the Free Software Foundation; either version 2 of the License,
 or (at your option) any later version.
 
 Bread Maker tool may come with bugs. This is the fun of freeware :-).
+
 """)
         info = wx.AboutDialogInfo()
         info.SetIcon(wx.Icon('./icons/bread128.png', wx.BITMAP_TYPE_ANY))
@@ -259,7 +260,7 @@ Bread Maker tool may come with bugs. This is the fun of freeware :-).
         info.SetVersion('0.6')
         info.SetDescription(description)
         info.SetCopyright('(C) 2015 - 2016 Jordi Redondo')
-        info.SetWebSite('http://github.com/redcorjo/breadmaker')
+        info.SetWebSite('https://github.com/redcorjo/bakertool.git')
         wx.AboutBox(info)
 
     def execute_help( self, event ):
