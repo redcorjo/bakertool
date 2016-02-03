@@ -31,7 +31,7 @@ class MyWindow(gui.MyFrame1):
             self.flour_entry.SetValue(str(mybread.flour))
             self.water_entry.SetValue(str(mybread.water))
             self.totalweight_entry.SetValue(str(mybread.totalweight))
-            self.percentage_entry.SetValue(str(mybread.percentage))
+            self.percentage_entry.SetValue(str(int(mybread.percentage)))
             self.sourdought_entry.SetValue(str(mybread.sourdought))
         else:
             mybread.reset()
