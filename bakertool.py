@@ -497,8 +497,10 @@ class Breadmaker():
         self.saltpercentage=2
         if self.yeast_option=="dryyeast" or self.yeast_option=="sourdought_and_dryyeast":
             self.yeastpercentage=1
-        else:
+        elif self.yeast_option=="freshyeast" or self.yeast_option=="sourdought_and_freshyeast":
             self.yeastpercentage=0.5
+        else:
+            self.yeastpercentage=0
         if self.yeast_option=="dryyeast" or self.yeast_option=="freshyeast":
             self.yeast=(self.flour/100.00)*self.yeastpercentage
             self.salt=(self.flour/100.00)*self.saltpercentage
