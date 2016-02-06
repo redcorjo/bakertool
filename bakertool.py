@@ -2,6 +2,7 @@ import gui
 import wx
 import mylocale
 import pickle
+import sys
 
 DEBUG="NO"
 
@@ -315,7 +316,7 @@ https://en.wikipedia.org/wiki/Baker_percentage
             debug_print(str(mybread.myprofiledict))
 
     def close_my_app(self, event):
-        exit()
+        sys.exit()
 
     def execute_profilename( self, event ):
         debug_print("execute_profilename")
@@ -867,7 +868,7 @@ def main():
     window.SetTitle(_(u"Bread maker"))
     window.Show()
     app.MainLoop()
-    exit()
+    sys.exit()
 
 if __name__ == '__main__':
     main()
