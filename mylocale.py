@@ -28,6 +28,5 @@ def mylocale():
         mylocale = gettext.translation('bakertool', localedir='locale', languages=[mylanguage])
         mylocale.install()
     except:
-        print "nothing"
         mylocale = gettext.translation('bakertool', localedir='locale', languages=["en"])
         mylocale.install()
