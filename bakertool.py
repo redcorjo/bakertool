@@ -261,7 +261,7 @@ Bread Maker tool may come with bugs. This is the fun of freeware :-).
         info.SetVersion('0.75')
         info.SetDescription(description)
         info.SetCopyright('(C) 2015 - 2016 Jordi Redondo')
-        info.SetWebSite('https://github.com/redcorjo/bakertool.git')
+        info.SetWebSite('https://github.com/redcorjo/bakertool/wiki')
         wx.AboutBox(info)
 
     def execute_help( self, event ):
