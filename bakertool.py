@@ -2,6 +2,7 @@ import gui
 import wx
 import mylocale
 import pickle
+import sys
 
 DEBUG="NO"
 
@@ -31,7 +32,7 @@ class MyWindow(gui.MyFrame1):
             self.flour_entry.SetValue(str(mybread.flour))
             self.water_entry.SetValue(str(mybread.water))
             self.totalweight_entry.SetValue(str(mybread.totalweight))
-            self.percentage_entry.SetValue(str(mybread.percentage))
+            self.percentage_entry.SetValue(str(int(mybread.percentage)))
             self.sourdought_entry.SetValue(str(mybread.sourdought))
         else:
             mybread.reset()
@@ -260,7 +261,7 @@ Bread Maker tool may come with bugs. This is the fun of freeware :-).
         info.SetVersion('0.75')
         info.SetDescription(description)
         info.SetCopyright('(C) 2015 - 2016 Jordi Redondo')
-        info.SetWebSite('https://github.com/redcorjo/bakertool.git')
+        info.SetWebSite('https://github.com/redcorjo/bakertool/wiki')
         wx.AboutBox(info)
 
     def execute_help( self, event ):
@@ -315,7 +316,7 @@ https://en.wikipedia.org/wiki/Baker_percentage
             debug_print(str(mybread.myprofiledict))
 
     def close_my_app(self, event):
-        exit()
+        sys.exit()
 
     def execute_profilename( self, event ):
         debug_print("execute_profilename")
@@ -497,8 +498,10 @@ class Breadmaker():
         self.saltpercentage=2
         if self.yeast_option=="dryyeast" or self.yeast_option=="sourdought_and_dryyeast":
             self.yeastpercentage=1
-        else:
+        elif self.yeast_option=="freshyeast" or self.yeast_option=="sourdought_and_freshyeast":
             self.yeastpercentage=0.5
+        else:
+            self.yeastpercentage=0
         if self.yeast_option=="dryyeast" or self.yeast_option=="freshyeast":
             self.yeast=(self.flour/100.00)*self.yeastpercentage
             self.salt=(self.flour/100.00)*self.saltpercentage
@@ -865,7 +868,7 @@ def main():
     window.SetTitle(_(u"Bread maker"))
     window.Show()
     app.MainLoop()
-    exit()
+    sys.exit()
 
 if __name__ == '__main__':
     main()

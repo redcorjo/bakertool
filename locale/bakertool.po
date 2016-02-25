@@ -5,66 +5,74 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-01-21 21:45+0100\n"
-"PO-Revision-Date: 2016-01-21 21:57+0100\n"
+"POT-Creation-Date: 2016-02-06 10:23+0100\n"
+"PO-Revision-Date: 2016-02-06 10:44+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: es\n"
 
-#: bakertool.py:21
+#: bakertool.py:23
 msgid "Are you ready to make bread? :-)"
 msgstr "¿Estás listo para hacer pan? :-)"
 
-#: bakertool.py:70
+#: bakertool.py:24 bakertool.py:62 bakertool.py:325 gui.py:188 gui.py:191
+msgid "default"
+msgstr "predeterminado"
+
+#: bakertool.py:81
 msgid "executed cleanup"
 msgstr "Limpiar datos"
 
-#: bakertool.py:92
+#: bakertool.py:103
 msgid "executed cleanup results"
-msgstr "ejecuta los resultados de limpieza"
+msgstr "ejecutado limpieza de resultados"
 
-#: bakertool.py:129
+#: bakertool.py:141
 msgid "activated selection: sourdought only"
 msgstr "selección activada: solo masa madre"
 
-#: bakertool.py:138
+#: bakertool.py:150
 msgid "activated selection: dry yeast only"
 msgstr "selección activada: solo levadura seca"
 
-#: bakertool.py:147
+#: bakertool.py:159
 msgid "activated selection: fresh yeast only"
 msgstr "selección activada: solo levadura fresca"
 
-#: bakertool.py:155
+#: bakertool.py:167
 msgid "activated selection: sourdought and dry yeast combined"
 msgstr "selección activada: masa madre y levadura seca"
 
-#: bakertool.py:163
+#: bakertool.py:175
 msgid "activated selection: sourdought and fresh yeast combined"
 msgstr "selección activada: masa madre y levadura fresca"
 
-#: bakertool.py:178
+#: bakertool.py:190
 msgid "Bread maker percentage selection"
 msgstr "Porcentage seleccionado del panadero"
 
-#: bakertool.py:181
+#: bakertool.py:193
 msgid "Percentage build based in chosen values"
 msgstr "Porcentaje construido con los valores seleccionados"
 
-#: bakertool.py:232
+#: bakertool.py:244
 msgid ""
 "Bread Maker tool is the perfect calculator to\n"
 "assist all Baker's percentage calculations providing different\n"
 "combinations to build your Baker recipes.\n"
 msgstr ""
+"Esta herramienta es la calculadora perfecta para\n"
+"asistir en todos los cálculos del porcentaje del panador\n"
+"proporcionando diferentes combinaciones para preparar\n"
+"tus recetas de panadero\n"
 
-#: bakertool.py:237
+#: bakertool.py:249
 msgid ""
 "Bread Maker tool is free software; you can redistribute\n"
 "it and/or modify it under the terms of the GNU General Public License as\n"
@@ -73,95 +81,107 @@ msgid ""
 "or (at your option) any later version.\n"
 "\n"
 "Bread Maker tool may come with bugs. This is the fun of freeware :-).\n"
+"\n"
 msgstr ""
+"Esta herramienta es software libre; puedes redistribuirlo\n"
+"y/o modificarlo a partir de los términos de la “GNU General Public "
+"License”\n"
+"bajos los criterios de la “Free Software Foundation”, tanto en la versión 2 "
+"de \n"
+"la licencia o (a tu criterio) a versiones posteriores de la misma.\n"
+"\n"
+"Esta herramienta puede venir con bugs. Esto es lo que tiene el software "
+"gratis :-)\n"
+"\n"
 
-#: bakertool.py:255
+#: bakertool.py:268
 msgid ""
 "For more details about the baker percentage refer to Wikipedia site at:\n"
 "\n"
 "https://en.wikipedia.org/wiki/Baker_percentage\n"
 msgstr ""
+"Para mas detalles sobre los principios del porcentaje del panadero\n"
+"referirse al sitio de la Wikipedia:\n"
+"\n"
+"https://es.wikipedia.org/wiki/Porcentaje_de_panadero\n"
 
-#: bakertool.py:488
+#: bakertool.py:577
+msgid "no enough ingredients to make a selection!"
+msgstr "no hay suficientes ingredientes para reallizar una selección!"
+
+#: bakertool.py:596
 msgid "executed formula using flour and totalweight"
 msgstr "ejecutada la fórmula usando harina y peso total"
 
-#: bakertool.py:498
+#: bakertool.py:606
 msgid "no enough ingredients to make a selection with flour and totalweight!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina y "
 "peso total!"
 
-#: bakertool.py:509
+#: bakertool.py:617
 msgid "executed formula using water and totalweight"
-msgstr ""
+msgstr "ejecutada la fórmula usando agua y peso total"
 
-#: bakertool.py:519
-#, fuzzy
+#: bakertool.py:627
 msgid "no enough ingredients to make a selection with water and totalweight!"
 msgstr ""
-"no hay suficientes ingredientes para realizar una selección con harina y "
-"peso total!"
+"no hay suficientes ingredientes para realizar una selección con agua y peso "
+"total!"
 
-#: bakertool.py:530
+#: bakertool.py:638
 msgid "executed formula using totalweight and percentage"
-msgstr ""
+msgstr "ejecutada la fórmula usando peso total y porcentaje"
 
-#: bakertool.py:540
-#, fuzzy
+#: bakertool.py:648
 msgid ""
 "no enough ingredients to make a selection with totalweight and percentage!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con peso total "
-"y harina y porcentaje!"
+"y porcentaje!"
 
-#: bakertool.py:551
+#: bakertool.py:659
 msgid "executed formula using flour and water"
-msgstr ""
+msgstr "ejecutada la fórmula usando harina y agua"
 
-#: bakertool.py:561
-#, fuzzy
+#: bakertool.py:669
 msgid "no enough ingredients to make a selection with flour and water!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina y "
 "agua!"
 
-#: bakertool.py:572
-#, fuzzy
+#: bakertool.py:680
 msgid "executed formula using flour and percentage"
 msgstr "ejecutada la fórmula usando harina y porcentaje"
 
-#: bakertool.py:582
-#, fuzzy
+#: bakertool.py:690
 msgid "no enough ingredients to make a selection with flour and percentage!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina y "
 "porcentaje!"
 
-#: bakertool.py:593
-#, fuzzy
+#: bakertool.py:701
 msgid "executed formula using water and percentage"
 msgstr "ejecutada la fórmula usando agua y porcentaje"
 
-#: bakertool.py:603
-#, fuzzy
+#: bakertool.py:711
 msgid "no enough ingredients to make a selection with water and percentage!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con agua y "
 "porcentaje!"
 
-#: bakertool.py:618
+#: bakertool.py:726
 msgid ""
 "executed formula using totalweight, percentage and and sourdought percentage"
 msgstr ""
+"ejecutada la fórmula usando peso total, porcentaje y porcentaje de masa "
+"madre"
 
-#: bakertool.py:627 bakertool.py:633
-#, fuzzy
+#: bakertool.py:735 bakertool.py:741
 msgid "executed formula using flour, water and totalweight"
 msgstr "ejecutada la fórmula usando harina, agua y el peso total"
 
-#: bakertool.py:643
-#, fuzzy
+#: bakertool.py:751
 msgid ""
 "no enough ingredients to make a selection with flour, totalweight and "
 "percentage!"
@@ -169,8 +189,7 @@ msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina, "
 "peso total y porcentaje!"
 
-#: bakertool.py:655
-#, fuzzy
+#: bakertool.py:762
 msgid ""
 "no enough ingredients to make a selection with water, totalweight and "
 "percentage!"
@@ -178,26 +197,22 @@ msgstr ""
 "no hay suficientes ingredientes para realizar una selección con agua, peso "
 "total y porcentaje!"
 
-#: bakertool.py:669
-#, fuzzy
+#: bakertool.py:776
 msgid "executed formula using flour, water and sourdought"
 msgstr "ejecutada la fórmula usando harina, agua y masa madre"
 
-#: bakertool.py:682
-#, fuzzy
+#: bakertool.py:789
 msgid ""
 "no enough ingredients to make a selection with flour, water and percentage!"
 msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina, "
 "agua y porcentaje!"
 
-#: bakertool.py:696
-#, fuzzy
+#: bakertool.py:803
 msgid "executed formula using flour, totalweight and sourdought"
 msgstr "ejecutada la fórmula usando harina, peso total y masa madre"
 
-#: bakertool.py:706
-#, fuzzy
+#: bakertool.py:813
 msgid ""
 "no enough ingredients to make a selection with flour, percentage and "
 "sourdought!"
@@ -205,8 +220,7 @@ msgstr ""
 "no hay suficientes ingredientes para realizar una selección con harina, "
 "porcentaje y masa madre!"
 
-#: bakertool.py:717
-#, fuzzy
+#: bakertool.py:824
 msgid ""
 "no enough ingredients to make a selection with water, percentage and "
 "sourdought!"
@@ -214,164 +228,162 @@ msgstr ""
 "no hay suficientes ingredientes para realizar una selección con agua, "
 "porcentaje y masa madre!"
 
-#: bakertool.py:731
-#, fuzzy
+#: bakertool.py:838
 msgid "executed formula using water, totalweight and sourdought"
 msgstr "ejecutada la fórmula usando agua, peso total y masa madre"
 
-#: bakertool.py:744
-#, fuzzy
+#: bakertool.py:851
 msgid "executed formula using totalweight, percentage and sourdought"
 msgstr "ejecutada la fórmula usando peso total, porcentaje y masa madre"
 
-#: bakertool.py:788
-msgid "no enough ingredients to make a selection!"
-msgstr "no hay suficientes ingredientes para reallizar una selección!"
-
-#: bakertool.py:811
+#: bakertool.py:865
 msgid "Bread maker"
 msgstr "Máquina panificadora"
 
-#: gui.py:23
+#: gui.py:20
 msgid "Bread Maker"
 msgstr "Máquina panificadora"
 
-#: gui.py:31
+#: gui.py:28
 msgid "All details"
 msgstr "Todos los detalles"
 
-#: gui.py:33
+#: gui.py:30
 msgid "My ingredients"
 msgstr "Mis ingredientes"
 
-#: gui.py:37 gui.py:86
+#: gui.py:34 gui.py:83
 msgid "Flour"
 msgstr "Harina"
 
-#: gui.py:44 gui.py:96
+#: gui.py:41 gui.py:93
 msgid "Water"
 msgstr "Agua"
 
-#: gui.py:51 gui.py:106
+#: gui.py:48 gui.py:103
 msgid "Total Weight"
 msgstr "Peso total"
 
-#: gui.py:58 gui.py:136
+#: gui.py:55 gui.py:133
 msgid "Sourdought"
 msgstr "Masa madre"
 
-#: gui.py:69 gui.py:152
+#: gui.py:66 gui.py:149
 msgid "Percentage"
 msgstr "Porcentaje"
 
-#: gui.py:82
+#: gui.py:79
 msgid "My final recipe"
 msgstr "Mi receta final"
 
-#: gui.py:116
+#: gui.py:113
 msgid "Yeast"
 msgstr "Levadura"
 
-#: gui.py:126
+#: gui.py:123
 msgid "Salt"
 msgstr "Sal"
 
-#: gui.py:175
+#: gui.py:172
 msgid "Messages"
 msgstr "Mensajes"
 
-#: gui.py:183
+#: gui.py:180
+msgid "Profiles"
+msgstr "Perfiles"
+
+#: gui.py:184
+msgid "My recipe name: "
+msgstr "El nombre de mi receta:"
+
+#: gui.py:202
 msgid "Actions"
 msgstr "Acciones"
 
-#: gui.py:191
+#: gui.py:210
 msgid "Execute"
 msgstr "Ejecutar"
 
-#: gui.py:194
+#: gui.py:213
 msgid "Wizard"
 msgstr "Wizard"
 
-#: gui.py:197
+#: gui.py:216
 msgid "Cleanup"
 msgstr "Limpiar datos"
 
-#: gui.py:203
+#: gui.py:222
 msgid "Combined sourdought with dry yeast"
 msgstr "Combinado masa madre con levadura seca"
 
-#: gui.py:203
+#: gui.py:222
 msgid "Combined sourdought with fresh yeast"
 msgstr "Combinado masa madre con levadura fresca"
 
-#: gui.py:203
+#: gui.py:222
 msgid "Dry yeast only"
 msgstr "Solo levadura seca"
 
-#: gui.py:203
+#: gui.py:222
 msgid "Fresh yeast only"
 msgstr "Solo levadura fresca"
 
-#: gui.py:203
+#: gui.py:222
 msgid "Sourdought only"
 msgstr "Solo masa madre"
 
-#: gui.py:204
+#: gui.py:223
 msgid "Yeast selection"
 msgstr "Selección de levaduras"
 
-#: gui.py:219
+#: gui.py:238
 msgid "Open"
 msgstr "Abrir"
 
-#: gui.py:222
+#: gui.py:243
 msgid "Save"
 msgstr "Grabar"
 
-#: gui.py:225
+#: gui.py:246
 msgid "Save As"
 msgstr "Grabar como"
 
-#: gui.py:230
-msgid "Print"
-msgstr "Imprimir"
-
-#: gui.py:235
+#: gui.py:251
 msgid "Exit"
 msgstr "Salir"
 
-#: gui.py:238
+#: gui.py:254
 msgid "File"
 msgstr "Fichero"
 
-#: gui.py:241 gui.py:249
+#: gui.py:257 gui.py:265
 msgid "Help"
 msgstr "Ayuda"
 
-#: gui.py:246
+#: gui.py:262
 msgid "About"
 msgstr "Acerca de"
 
-#: gui.py:313 gui.py:380
+#: gui.py:337 gui.py:404
 msgid "Select Percentages"
 msgstr "Selecciona porcentajes"
 
-#: gui.py:321 gui.py:388
+#: gui.py:345 gui.py:412
 msgid "Selected final weight"
 msgstr "Seleccionado peso final"
 
-#: gui.py:331 gui.py:398
+#: gui.py:355 gui.py:422
 msgid "Percentage section"
 msgstr "Selección del porcentaje"
 
-#: gui.py:333 gui.py:400
+#: gui.py:357 gui.py:424
 msgid "Bread percentage formula"
 msgstr "Fórmula del panadero"
 
-#: gui.py:341
+#: gui.py:365
 msgid "Sourdought percentage versus total weight"
 msgstr "Porcentaje de masa madre respecto peso total"
 
-#: gui.py:352 gui.py:411
+#: gui.py:376 gui.py:435
 msgid "Ok"
 msgstr "Ok"

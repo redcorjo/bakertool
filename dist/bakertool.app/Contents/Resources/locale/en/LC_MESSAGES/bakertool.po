@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-02-06 10:45+0100\n"
+"PO-Revision-Date: 2016-02-06 10:46+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+#: bakertool.py:23
+msgid "Are you ready to make bread? :-)"
+msgstr ""
+
+#: bakertool.py:24 bakertool.py:62 bakertool.py:325 gui.py:188 gui.py:191
+msgid "default"
+msgstr ""
+
+#: bakertool.py:81
+msgid "executed cleanup"
+msgstr ""
+
+#: bakertool.py:103
+msgid "executed cleanup results"
+msgstr ""
+
+#: bakertool.py:141
+msgid "activated selection: sourdought only"
+msgstr ""
+
+#: bakertool.py:150
+msgid "activated selection: dry yeast only"
+msgstr ""
+
+#: bakertool.py:159
+msgid "activated selection: fresh yeast only"
+msgstr ""
+
+#: bakertool.py:167
+msgid "activated selection: sourdought and dry yeast combined"
+msgstr ""
+
+#: bakertool.py:175
+msgid "activated selection: sourdought and fresh yeast combined"
+msgstr ""
+
+#: bakertool.py:190
+msgid "Bread maker percentage selection"
+msgstr ""
+
+#: bakertool.py:193
+msgid "Percentage build based in chosen values"
+msgstr ""
+
+#: bakertool.py:244
+msgid ""
+"Bread Maker tool is the perfect calculator to\n"
+"assist all Baker's percentage calculations providing different\n"
+"combinations to build your Baker recipes.\n"
+msgstr ""
+
+#: bakertool.py:249
+msgid ""
+"Bread Maker tool is free software; you can redistribute\n"
+"it and/or modify it under the terms of the GNU General Public License as\n"
+"published by the Free Software Foundation; either version 2 of the "
+"License,\n"
+"or (at your option) any later version.\n"
+"\n"
+"Bread Maker tool may come with bugs. This is the fun of freeware :-).\n"
+"\n"
+msgstr ""
+
+#: bakertool.py:268
+msgid ""
+"For more details about the baker percentage refer to Wikipedia site at:\n"
+"\n"
+"https://en.wikipedia.org/wiki/Baker_percentage\n"
+msgstr ""
+
+#: bakertool.py:577
+msgid "no enough ingredients to make a selection!"
+msgstr ""
+
+#: bakertool.py:596
+msgid "executed formula using flour and totalweight"
+msgstr ""
+
+#: bakertool.py:606
+msgid "no enough ingredients to make a selection with flour and totalweight!"
+msgstr ""
+
+#: bakertool.py:617
+msgid "executed formula using water and totalweight"
+msgstr ""
+
+#: bakertool.py:627
+msgid "no enough ingredients to make a selection with water and totalweight!"
+msgstr ""
+
+#: bakertool.py:638
+msgid "executed formula using totalweight and percentage"
+msgstr ""
+
+#: bakertool.py:648
+msgid ""
+"no enough ingredients to make a selection with totalweight and percentage!"
+msgstr ""
+
+#: bakertool.py:659
+msgid "executed formula using flour and water"
+msgstr ""
+
+#: bakertool.py:669
+msgid "no enough ingredients to make a selection with flour and water!"
+msgstr ""
+
+#: bakertool.py:680
+msgid "executed formula using flour and percentage"
+msgstr ""
+
+#: bakertool.py:690
+msgid "no enough ingredients to make a selection with flour and percentage!"
+msgstr ""
+
+#: bakertool.py:701
+msgid "executed formula using water and percentage"
+msgstr ""
+
+#: bakertool.py:711
+msgid "no enough ingredients to make a selection with water and percentage!"
+msgstr ""
+
+#: bakertool.py:726
+msgid ""
+"executed formula using totalweight, percentage and and sourdought percentage"
+msgstr ""
+
+#: bakertool.py:735 bakertool.py:741
+msgid "executed formula using flour, water and totalweight"
+msgstr ""
+
+#: bakertool.py:751
+msgid ""
+"no enough ingredients to make a selection with flour, totalweight and "
+"percentage!"
+msgstr ""
+
+#: bakertool.py:762
+msgid ""
+"no enough ingredients to make a selection with water, totalweight and "
+"percentage!"
+msgstr ""
+
+#: bakertool.py:776
+msgid "executed formula using flour, water and sourdought"
+msgstr ""
+
+#: bakertool.py:789
+msgid ""
+"no enough ingredients to make a selection with flour, water and percentage!"
+msgstr ""
+
+#: bakertool.py:803
+msgid "executed formula using flour, totalweight and sourdought"
+msgstr ""
+
+#: bakertool.py:813
+msgid ""
+"no enough ingredients to make a selection with flour, percentage and "
+"sourdought!"
+msgstr ""
+
+#: bakertool.py:824
+msgid ""
+"no enough ingredients to make a selection with water, percentage and "
+"sourdought!"
+msgstr ""
+
+#: bakertool.py:838
+msgid "executed formula using water, totalweight and sourdought"
+msgstr ""
+
+#: bakertool.py:851
+msgid "executed formula using totalweight, percentage and sourdought"
+msgstr ""
+
+#: bakertool.py:865
+msgid "Bread maker"
+msgstr ""
+
+#: gui.py:20
+msgid "Bread Maker"
+msgstr ""
+
+#: gui.py:28
+msgid "All details"
+msgstr ""
+
+#: gui.py:30
+msgid "My ingredients"
+msgstr ""
+
+#: gui.py:34 gui.py:83
+msgid "Flour"
+msgstr ""
+
+#: gui.py:41 gui.py:93
+msgid "Water"
+msgstr ""
+
+#: gui.py:48 gui.py:103
+msgid "Total Weight"
+msgstr ""
+
+#: gui.py:55 gui.py:133
+msgid "Sourdought"
+msgstr ""
+
+#: gui.py:66 gui.py:149
+msgid "Percentage"
+msgstr ""
+
+#: gui.py:79
+msgid "My final recipe"
+msgstr ""
+
+#: gui.py:113
+msgid "Yeast"
+msgstr ""
+
+#: gui.py:123
+msgid "Salt"
+msgstr ""
+
+#: gui.py:172
+msgid "Messages"
+msgstr ""
+
+#: gui.py:180
+msgid "Profiles"
+msgstr ""
+
+#: gui.py:184
+msgid "My recipe name: "
+msgstr ""
+
+#: gui.py:202
+msgid "Actions"
+msgstr ""
+
+#: gui.py:210
+msgid "Execute"
+msgstr ""
+
+#: gui.py:213
+msgid "Wizard"
+msgstr ""
+
+#: gui.py:216
+msgid "Cleanup"
+msgstr ""
+
+#: gui.py:222
+msgid "Combined sourdought with dry yeast"
+msgstr ""
+
+#: gui.py:222
+msgid "Combined sourdought with fresh yeast"
+msgstr ""
+
+#: gui.py:222
+msgid "Dry yeast only"
+msgstr ""
+
+#: gui.py:222
+msgid "Fresh yeast only"
+msgstr ""
+
+#: gui.py:222
+msgid "Sourdought only"
+msgstr ""
+
+#: gui.py:223
+msgid "Yeast selection"
+msgstr ""
+
+#: gui.py:238
+msgid "Open"
+msgstr ""
+
+#: gui.py:243
+msgid "Save"
+msgstr ""
+
+#: gui.py:246
+msgid "Save As"
+msgstr ""
+
+#: gui.py:251
+msgid "Exit"
+msgstr ""
+
+#: gui.py:254
+msgid "File"
+msgstr ""
+
+#: gui.py:257 gui.py:265
+msgid "Help"
+msgstr ""
+
+#: gui.py:262
+msgid "About"
+msgstr ""
+
+#: gui.py:337 gui.py:404
+msgid "Select Percentages"
+msgstr ""
+
+#: gui.py:345 gui.py:412
+msgid "Selected final weight"
+msgstr ""
+
+#: gui.py:355 gui.py:422
+msgid "Percentage section"
+msgstr ""
+
+#: gui.py:357 gui.py:424
+msgid "Bread percentage formula"
+msgstr ""
+
+#: gui.py:365
+msgid "Sourdought percentage versus total weight"
+msgstr ""
+
+#: gui.py:376 gui.py:435
+msgid "Ok"
+msgstr ""

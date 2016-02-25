@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Jun 17 2015)
+## Python code generated with wxFormBuilder (version Aug 23 2015)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO "NOT" EDIT THIS FILE!
@@ -9,6 +9,7 @@
 
 import wx
 import wx.xrc
+
 
 ###########################################################################
 ## Class MyFrame1
@@ -238,16 +239,13 @@ class MyFrame1 ( wx.Frame ):
 		self.m_menuItem_open = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Open"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_file.AppendItem( self.m_menuItem_open )
 		
+		self.m_menu_file.AppendSeparator()
+		
 		self.m_menuItem_save = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Save"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_file.AppendItem( self.m_menuItem_save )
 		
 		self.m_menuItem_save_as = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Save As"), wx.EmptyString, wx.ITEM_NORMAL )
 		self.m_menu_file.AppendItem( self.m_menuItem_save_as )
-		
-		self.m_menu_file.AppendSeparator()
-		
-		self.m_menuItem_print = wx.MenuItem( self.m_menu_file, wx.ID_ANY, _(u"Print"), wx.EmptyString, wx.ITEM_NORMAL )
-		self.m_menu_file.AppendItem( self.m_menuItem_print )
 		
 		self.m_menu_file.AppendSeparator()
 		
@@ -349,7 +347,7 @@ class MyDialog_select_percentage_with_sourdought ( wx.Dialog ):
 		self.m_staticText_selected_final_weight.Wrap( -1 )
 		bSizer5.Add( self.m_staticText_selected_final_weight, 0, wx.ALL, 5 )
 		
-		self.totalweight_entry = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.totalweight_entry = wx.TextCtrl( self, wx.ID_ANY, _(u"1000"), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer5.Add( self.totalweight_entry, 0, wx.ALL, 5 )
 		
 		
@@ -416,7 +414,7 @@ class MyDialog_select_percentage_without_sourdought ( wx.Dialog ):
 		self.m_staticText_selected_final_weight.Wrap( -1 )
 		bSizer5.Add( self.m_staticText_selected_final_weight, 0, wx.ALL, 5 )
 		
-		self.totalweight_entry = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.totalweight_entry = wx.TextCtrl( self, wx.ID_ANY, _(u"1000"), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer5.Add( self.totalweight_entry, 0, wx.ALL, 5 )
 		
 		
